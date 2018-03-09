@@ -15,13 +15,16 @@ class App extends Component {
 
 
   clicked(event){
+    if(this.state.board[event.target.datestate.square] == ''){
+        this.state.board[event.target.datestate.square]= this.state.turn;
 
-    this.state.board[event.target.datestate.square]= this.state.turn;
+        event.target.innerText=this.state.turn;
+        this.setState({
+            turn:this.state.turn == 'x' ? 'o' :'x',
+            board:this.state.board
+    }
 
-   event.target.innerText=this.state.turn;
-   this.setState({
-       turn:this.state.turn == 'x' ? 'o' :'x',
-       board:this.state.board
+
    })
   }
   render() {
