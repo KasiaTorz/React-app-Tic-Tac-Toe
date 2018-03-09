@@ -29,7 +29,10 @@ class App extends Component {
     checkWinner(){
 
     var moves=[[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6],[0,1,2],[3,4,5],[6,7,8]]
-          g
+    var board = this = this.state.board;
+          for(let i=0;i<moves.length;i++){
+      if (board[moves [i][0]] == board[moves [1][1]] && board[moves][1][1] == board[moves][i][2]])
+    }
 
     }
   }
