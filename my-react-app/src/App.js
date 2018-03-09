@@ -15,7 +15,10 @@ class App extends Component {
 
 
   clicked(event){
-    console.log(event.target);
+   event.target.innerText=this.state.turn;
+   this.setState({
+       turn:this.state.turn == 'x' ? 'o' :'x'
+   })
   }
   render() {
     return (
