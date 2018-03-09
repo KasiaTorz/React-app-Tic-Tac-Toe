@@ -15,9 +15,13 @@ class App extends Component {
 
 
   clicked(event){
+
+    this.state.board[event.target.datestate.square]= this.state.turn;
+
    event.target.innerText=this.state.turn;
    this.setState({
-       turn:this.state.turn == 'x' ? 'o' :'x'
+       turn:this.state.turn == 'x' ? 'o' :'x',
+       board:this.state.board
    })
   }
   render() {
@@ -27,15 +31,15 @@ class App extends Component {
               Welcome to Tic Tac Toe API game
             </div>
             <div id="board" onClick={(e)=>this.clicked(e)}>
-                <div class="div squears"></div>
-                <div class="div squears"></div>
-                <div class="div squears"></div>
-                <div class="div squears"></div>
-                <div class="div squears"></div>
-                <div class="div squears"></div>
-                <div class="div squears"></div>
-                <div class="div squears"></div>
-                <div class="div squears"></div>
+                <div class="div squears" date-sguare="0" ></div>
+                <div class="div squears" date-sguare="1"></div>
+                <div class="div squears" date-sguare="2"></div>
+                <div class="div squears" date-sguare="3"></div>
+                <div class="div squears" date-sguare="4"></div>
+                <div class="div squears" date-sguare="5"></div>
+                <div class="div squears" date-sguare="6"></div>
+                <div class="div squears" date-sguare="7"></div>
+                <div class="div squears" date-sguare="8"></div>
             </div>
         </div>
 
