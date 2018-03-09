@@ -27,17 +27,20 @@ class App extends Component {
         if (result == 'x') {
             this.setState({
                 gameEnded: true,
-                winner: 'x'
+                winner: 'x',
+                winnerLine:"Match wan by x",
             });
         } else if (result == 'o') {
             this.setState({
                 gameEnded: true,
                 winner: 'o',
+                winnerLine:"Match won by o"
             });
             else if (result == 'draw'){
                 this.setState({
                     gameEnded:true,
                     winner:'draw',
+                    winnerLine:'Match is drawn',
                 })
             }
         }
@@ -60,6 +63,7 @@ render()
 {
     return (
         <div id="game">
+            <div id="status">{this.state.winnerLine}</div>
             <div id="head">
                 Welcome to Tic Tac Toe API game
             </div>
