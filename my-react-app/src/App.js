@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+
+  constructor(){
+    super();
+    this.state={
+      turn:'x',
+        gameEnded:false,
+        board:Array(9).fill('')
+    }
+  }
+
+
+
   clicked(event){
     console.log(event.target);
   }
