@@ -8,7 +8,8 @@ class App extends Component {
     this.state={
       turn:'x',
         gameEnded:false,
-        board:Array(9).fill('')
+        board:Array(9).fill(''),
+        totalMoves:0
     }
   }
 
@@ -21,7 +22,8 @@ class App extends Component {
         event.target.innerText=this.state.turn;
         this.setState({
             turn:this.state.turn == 'x' ? 'o' :'x',
-            board:this.state.board
+            board:this.state.board,
+            totalMoves:this.state.totalMoves++
     })
     }
     checkWinner(){
