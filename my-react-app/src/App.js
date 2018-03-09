@@ -32,8 +32,14 @@ class App extends Component {
         } else if (result == 'o') {
             this.setState({
                 gameEnded: true,
-                winner: 'x',
+                winner: 'o',
             });
+            else if (result == 'draw'){
+                this.setState({
+                    gameEnded:true,
+                    winner:'draw',
+                })
+            }
         }
     }
 
@@ -43,9 +49,10 @@ class App extends Component {
         for (let i = 0; i < moves.length; i++) {
             if (board[moves [i][0]] == board[moves [i][1]] &&
                 board[moves][i][1] == board[moves][i][2]]
-        )
             return board[move [i] [0]];
         }
+        if(this.state.totalMoves == 9){
+         return 'draw'
     }
 }
 
