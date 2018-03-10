@@ -60,7 +60,7 @@ class App extends Component {
                 this.gameState.gameLocked = false;
                 this.clicked(document.querySelectorAll('.square')[random]);
             },1000);
-                }
+       }
       }
 
     checkWinner() {
@@ -76,8 +76,7 @@ class App extends Component {
     }
 }
 
-render()
-{
+render(){
     return (
         <div id="game">
             <div id="status">{this.state.winnerLine}</div>
@@ -85,18 +84,18 @@ render()
                 Welcome to Tic Tac Toe API game
             </div>
             <div id="board" onClick={(e) => this.clicked(e)}>
-                <div class="div squears" date-sguare="0"></div>
-                <div class="div squears" date-sguare="1"></div>
-                <div class="div squears" date-sguare="2"></div>
-                <div class="div squears" date-sguare="3"></div>
-                <div class="div squears" date-sguare="4"></div>
-                <div class="div squears" date-sguare="5"></div>
-                <div class="div squears" date-sguare="6"></div>
-                <div class="div squears" date-sguare="7"></div>
-                <div class="div squears" date-sguare="8"></div>
+                <div class="div squear" date-sguare="0"></div>
+                <div class="div squear" date-sguare="1"></div>
+                <div class="div squear" date-sguare="2"></div>
+                <div class="div squear" date-sguare="3"></div>
+                <div class="div squear" date-sguare="4"></div>
+                <div class="div squear" date-sguare="5"></div>
+                <div class="div squear" date-sguare="6"></div>
+                <div class="div squear" date-sguare="7"></div>
+                <div class="div squear" date-sguare="8"></div>
             </div>
         </div>
-    )
-}
+    );
+  }
 }
 export default App;
