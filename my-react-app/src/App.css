@@ -6,7 +6,7 @@
 
 #board{
   display: flex;
-  width: 700px;
+  width: 300px;
   flex-wrap: wrap;
 }
 .square{
