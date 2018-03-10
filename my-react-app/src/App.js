@@ -7,19 +7,19 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            turn: 'x',
-            gameEnded: false,
             winner: undefined,
-            board: Array(9).fill(''),
-        }
-        this.gameState={
-            board:Array(9).fill(''),
-            totalMoves:0
-        }
+        };
 
+        this.gameState = {
+            turn: 'x',
+            gameLocked: false,
+            gameEnded: false,
+            board: Array(9).fill(''),
+            totalMoves: 0
+        }
     }
 
-    clicked(event) {
+    clicked(box) {
         if (this.state.board[event.target.datestate.square] === '') {
             this.gameState.board[event.target.datestate.square] = this.state.turn;
             event.target.innerText = this.state.turn;
