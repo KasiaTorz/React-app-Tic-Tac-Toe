@@ -20,37 +20,48 @@ class App extends Component {
     }
 
     clicked(box) {
-        if (this.state.board[event.target.datestate.square] === '') {
-            this.gameState.board[event.target.datestate.square] = this.state.turn;
-            event.target.innerText = this.state.turn;
-            this.setState({
-                turn: this.state.turn === 'x' ? 'o' : 'x',
-            })
+        if (this.gameState.gameEnded || this.gameState.gameLocked)return;
+
+         if (this.gameState.board[box.dataset.square] == ''){
+             this.gameState.board[box.datestate.square] = this.gameState.turn;
+            box.innerText = this.gameState.turn;
+
+            this.gameState.turn == this.gameState.turn == 'x' ? 'o' : 'x',
+            this.gameState.totalMoves++;
+            }
 
         }
         var result = this.checkWinner();
-        if (result === 'x') {
+
+        if (result == 'x') {
+            this.gameState.gameEnded =true;
             this.setState({
-                gameEnded: true,
                 winner: 'x',
-                winnerLine:"Match wan by x",
+                winnerLine:"Match won by x",
             });
-        }
-        else if (result ==='o') {
-            this.setState({
-                gameEnded: true,
-                winner: 'o',
-                winnerLine:"Match won by o"
-            });
-            if (result === 'draw'){
-                this.setState({
-                    gameEnded:true,
+        }else if (result =='o') {
+    this.gameState.gameEnded = true;
+    this.setState({
+        winner: 'o',
+        winnerLine: "Match won by o"
+    });
+}else if (result =='draw'){
+                this.gameState.gameEnded=true;
+                this.gameState({
                     winner:'draw',
                     winnerLine:'Match is drawn',
                 })
-            }
-        }
-    }
+      if (this.gameState.turn == 'o' && !this.gameState.gameEnded){
+            this.gameState.gameLocked = true;
+            setTimeout(()=>{
+                do{
+                    var random =Math.floor(Math.random())*9);
+                } while(this.gameState.board[random] !='');
+                this.gameState.gameLocked = false;
+                this.clicked(document.querySelectorAll('.square')[random]);
+            },1000);
+                }
+      }
 
     checkWinner() {
         var moves = [[0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6], [0, 1, 2], [3, 4, 5], [6, 7, 8]]
